@@ -22,7 +22,18 @@ struct HeaderView: View {
         .padding(.horizontal)
         .padding(.bottom, 20)
         .frame(height: 70)
-        .background(Color.marvelRed.ignoresSafeArea())
+        .background(
+            LinearGradient(
+                gradient: Gradient(
+                    colors: [
+                        Color.marvelRed,
+                        Color.marvelSecondaryRed.opacity(0.9)
+                    ]
+                ),
+                startPoint: .center,
+                endPoint: .trailing
+            )
+        )
     }
 }
 
