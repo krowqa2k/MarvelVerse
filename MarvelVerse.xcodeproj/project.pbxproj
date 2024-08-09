@@ -11,6 +11,8 @@
 		C199C2EF2C66A06F004FFE2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199C2EE2C66A06F004FFE2F /* ContentView.swift */; };
 		C199C2F12C66A070004FFE2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C199C2F02C66A070004FFE2F /* Assets.xcassets */; };
 		C199C2F52C66A070004FFE2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C199C2F42C66A070004FFE2F /* Preview Assets.xcassets */; };
+		C199C3032C66A896004FFE2F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199C3022C66A896004FFE2F /* MainView.swift */; };
+		C199C3052C66AADA004FFE2F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199C3042C66AADA004FFE2F /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		C199C2F02C66A070004FFE2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C199C2F22C66A070004FFE2F /* MarvelVerse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarvelVerse.entitlements; sourceTree = "<group>"; };
 		C199C2F42C66A070004FFE2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C199C3022C66A896004FFE2F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C199C3042C66AADA004FFE2F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,11 @@
 		C199C2EB2C66A06F004FFE2F /* MarvelVerse */ = {
 			isa = PBXGroup;
 			children = (
+				C199C2FE2C66A0DD004FFE2F /* Components */,
+				C199C2FD2C66A0D6004FFE2F /* Services */,
+				C199C2FB2C66A0C2004FFE2F /* Models */,
+				C199C2FC2C66A0CE004FFE2F /* ViewModel */,
+				C199C2FF2C66A0E2004FFE2F /* Views */,
 				C199C2EC2C66A06F004FFE2F /* MarvelVerseApp.swift */,
 				C199C2EE2C66A06F004FFE2F /* ContentView.swift */,
 				C199C2F02C66A070004FFE2F /* Assets.xcassets */,
@@ -67,6 +76,43 @@
 				C199C2F42C66A070004FFE2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C199C2FB2C66A0C2004FFE2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C199C2FC2C66A0CE004FFE2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C199C2FD2C66A0D6004FFE2F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C199C2FE2C66A0DD004FFE2F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C199C3042C66AADA004FFE2F /* HeaderView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C199C2FF2C66A0E2004FFE2F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C199C3022C66A896004FFE2F /* MainView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C199C2EF2C66A06F004FFE2F /* ContentView.swift in Sources */,
+				C199C3032C66A896004FFE2F /* MainView.swift in Sources */,
 				C199C2ED2C66A06F004FFE2F /* MarvelVerseApp.swift in Sources */,
+				C199C3052C66AADA004FFE2F /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +312,7 @@
 		C199C2F92C66A070004FFE2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MarvelVerseIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MarvelVerse/MarvelVerse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,7 +350,7 @@
 		C199C2FA2C66A070004FFE2F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MarvelVerseIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MarvelVerse/MarvelVerse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
