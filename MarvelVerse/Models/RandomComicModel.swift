@@ -199,6 +199,23 @@ struct RandomComicModel: Codable, Identifiable {
     let description: String?
     let thumbnail: [String:String]?
     let urls: [[String: String]]?
+    let series: Series?
+    
+    static var mock: RandomComicModel {
+        RandomComicModel(
+            id: 2,
+            title: "Pulse (2004) #6",
+            description: "",
+            thumbnail: ["path": "http://i.annihil.us/u/prod/marvel/i/mg/1/30/56538fd257915"],
+            urls: [["detail":"http://marvel.com/comics/issue/2/pulse_2004_6?utm_campaign=apiRef&utm_source=2b23e25a76e180235beae440efbd1949"]],
+            series: Series.init(resourceURI: "", name: "Wolverine: The End (2003 - 2004)")
+        )
+    }
+}
+
+struct Series: Codable {
+    let resourceURI: String?
+    let name: String?
 }
 
 

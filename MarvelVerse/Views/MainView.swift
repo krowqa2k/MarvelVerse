@@ -19,6 +19,15 @@ struct MainView: View {
                 
                 mainViewImage
                 
+                ScrollView(.vertical) {
+                    ForEach(1..<22) { i in
+                        Text("Placeholder: \(i)")
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .scrollIndicators(.hidden)
+                
                 Spacer()
             }
         }
