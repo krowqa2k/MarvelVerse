@@ -7,12 +7,36 @@
 
 import SwiftUI
 
-struct RandomComicCell_: View {
+struct RandomComicCell: View {
+    
+    var imageName: String = Constants.mockImage
+    var comic: RandomComicModel = .mock
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 4){
+            ImageLoader(imageURL: imageName)
+                .frame(width: 120, height: 180)
+                .aspectRatio(contentMode: .fill)
+                .cornerRadius(4)
+            
+            Text(comic.title ?? "")
+                .font(.system(size: 10))
+                .fontWeight(.medium)
+                .foregroundStyle(.marvelBlack)
+            
+            Text(comic.series?.name ?? "")
+                .font(.system(size: 9))
+                .foregroundStyle(.secondary)
+        }
+        .multilineTextAlignment(.leading)
+        .lineLimit(4)
+        .frame(maxWidth: 120)
     }
 }
 
 #Preview {
-    RandomComicCell_()
+    ZStack {
+        Color.marvelWhite.ignoresSafeArea()
+        RandomComicCell()
+    }
 }

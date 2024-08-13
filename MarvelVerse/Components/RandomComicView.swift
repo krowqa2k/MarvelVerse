@@ -15,11 +15,22 @@ struct RandomComicView: View {
         ZStack {
             if viewModel.isLoading {
                 ProgressView()
+            } else {
+                VStack() {
+                    HStack {
+                        VStack(spacing: 12) {
+                            Text("Random Comic")
+                                .font(.title2)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.marvelRed)
+                            
+                            ForEach(viewModel.randomComic) { randomComic in
+                                RandomComicCell(imageName: viewModel.extractImage(data: randomComic.thumbnail ?? ["":""]), comic: randomComic)
+                            }
+                        }
+                    }
+                }
             }
-        }
-        List(viewModel.randomComic) { randomComic in
-            Text(randomComic.title ?? "")
-                .foregroundStyle(.marvelBlack)
         }
         .task {
             await viewModel.getRandomComicData()

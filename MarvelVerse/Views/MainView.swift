@@ -19,6 +19,8 @@ struct MainView: View {
                 
                 mainViewImage
                 
+                RandomComicView()
+                
                 ScrollView(.vertical) {
                     ForEach(1..<22) { i in
                         Text("Placeholder: \(i)")
