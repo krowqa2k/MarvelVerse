@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class MarvelVerseViewModel: ObservableObject {
     
     @Published private(set) var randomComic: [RandomComicModel] = []
@@ -27,5 +28,15 @@ final class MarvelVerseViewModel: ObservableObject {
             print("Error fetching comic data: \(error)")
             self.isLoading = false
         }
+    }
+    
+    func extractImage(data: [String: String]) -> String {
+        
+        let path = data["path"] ?? ""
+        let ext = data["extension"] ?? ""
+        
+        let thumbnail = "\(path).\(ext)"
+        return thumbnail
+        
     }
 }
