@@ -21,6 +21,7 @@
 		C1D97C912C6B7F9300629839 /* MarvelVerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C902C6B7F9300629839 /* MarvelVerseViewModel.swift */; };
 		C1D97C932C6B807000629839 /* RandomComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C922C6B807000629839 /* RandomComicView.swift */; };
 		C1D97C962C6B8AB700629839 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C952C6B8AB700629839 /* MD5.swift */; };
+		C1D97C982C6B9D5400629839 /* RandomComicCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C972C6B9D5400629839 /* RandomComicCell .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		C1D97C902C6B7F9300629839 /* MarvelVerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelVerseViewModel.swift; sourceTree = "<group>"; };
 		C1D97C922C6B807000629839 /* RandomComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomComicView.swift; sourceTree = "<group>"; };
 		C1D97C952C6B8AB700629839 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
+		C1D97C972C6B9D5400629839 /* RandomComicCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomComicCell .swift"; sourceTree = "<group>"; };
+		C1D97C992C6BA84A00629839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 		C199C2EB2C66A06F004FFE2F /* MarvelVerse */ = {
 			isa = PBXGroup;
 			children = (
+				C1D97C992C6BA84A00629839 /* Info.plist */,
 				C1D97C942C6B8A9E00629839 /* Extensions */,
 				C1D97C872C6B772200629839 /* Constants */,
 				C199C2FE2C66A0DD004FFE2F /* Components */,
@@ -126,6 +130,7 @@
 				C199C3042C66AADA004FFE2F /* HeaderView.swift */,
 				C1D97C7D2C6B767400629839 /* ImageLoader.swift */,
 				C1D97C922C6B807000629839 /* RandomComicView.swift */,
+				C1D97C972C6B9D5400629839 /* RandomComicCell .swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				C1D97C7E2C6B767400629839 /* ImageLoader.swift in Sources */,
 				C199C2ED2C66A06F004FFE2F /* MarvelVerseApp.swift in Sources */,
 				C199C3052C66AADA004FFE2F /* HeaderView.swift in Sources */,
+				C1D97C982C6B9D5400629839 /* RandomComicCell .swift in Sources */,
 				C1D97C8B2C6B77F800629839 /* RandomComicModel.swift in Sources */,
 				C1D97C912C6B7F9300629839 /* MarvelVerseViewModel.swift in Sources */,
 				C1D97C892C6B772C00629839 /* Constants.swift in Sources */,
@@ -374,6 +380,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarvelVerse/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -412,6 +419,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarvelVerse/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
