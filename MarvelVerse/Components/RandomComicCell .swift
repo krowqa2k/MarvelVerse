@@ -28,11 +28,11 @@ struct RandomComicForTheDayCell: View {
                     
                     Text(comic.series?.name?.uppercased() ?? "")
                         .font(.caption)
-                        .foregroundStyle(.marvelWhite.opacity(0.6))
+                        .foregroundStyle(.marvelWhite.opacity(0.8))
                         .multilineTextAlignment(.leading)
                         .lineLimit(1)
                 }
-                .padding(.bottom, 30)
+                .padding(.bottom, 10)
                 .padding(.horizontal)
                 .frame(maxWidth: 360, alignment: .leading)
                 .frame(maxHeight: 280, alignment: .bottom)
@@ -43,26 +43,6 @@ struct RandomComicForTheDayCell: View {
                         endPoint: .bottom
                     )
                     .cornerRadius(8)
-                )
-                .overlay (
-                    Rectangle()
-                        .fill(Color.marvelRed.opacity(0.8))
-                        .frame(width: 80, height: 80, alignment: .bottom)
-                        .clipShape(
-                            UnevenRoundedRectangle(
-                                topLeadingRadius: 8,
-                                bottomTrailingRadius: 8
-                            )
-                        )
-                        .overlay {
-                            Text("MORE DETAILS")
-                                .fontWeight(.bold)
-                                .foregroundStyle(.marvelWhite)
-                        }
-                        .onTapGesture {
-                            
-                        }
-                    ,alignment: .bottomTrailing
                 )
             }
         }
