@@ -19,6 +19,7 @@ struct RandomComicForTheDayCell: View {
                     .frame(width: 360, height: 280)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(8)
+                    .shadow(color: .secondary, radius: 5, x: 0, y: 10)
                 VStack(alignment: .leading, spacing: 8) {
                     Text(comic.title?.uppercased() ?? "")
                         .font(.title2)
@@ -49,6 +50,7 @@ struct RandomComicForTheDayCell: View {
                         .frame(width: 80, height: 80, alignment: .bottom)
                         .clipShape(
                             UnevenRoundedRectangle(
+                                topLeadingRadius: 8,
                                 bottomTrailingRadius: 8
                             )
                         )
@@ -63,7 +65,6 @@ struct RandomComicForTheDayCell: View {
                     ,alignment: .bottomTrailing
                 )
             }
-            .shadow(color: .secondary, radius: 5, x: -1, y: 10)
         }
     }
 }
