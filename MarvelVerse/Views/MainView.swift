@@ -19,8 +19,6 @@ struct MainView: View {
                 
                 mainViewImage
                 
-                RandomComicView()
-                
                 ScrollView(.vertical) {
                     ForEach(1..<22) { i in
                         Text("Placeholder: \(i)")
@@ -37,13 +35,10 @@ struct MainView: View {
     
     private var mainViewImage: some View {
         VStack {
-            Image(marvelMainImage)
-                .resizable()
-                .frame(maxWidth: UIScreen.main.bounds.width - 10)
-                .frame(height: 200)
-                .cornerRadius(4)
-                .padding()
+            RandomComicForTheDayView()
+                .padding(.top)
         }
+        .frame(maxWidth: .infinity)
         .background(Color.marvelWhite)
         .clipShape(
             UnevenRoundedRectangle(

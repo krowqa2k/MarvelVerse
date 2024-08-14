@@ -7,36 +7,69 @@
 
 import SwiftUI
 
-struct RandomComicCell: View {
+struct RandomComicForTheDayCell: View {
     
     var imageName: String = Constants.mockImage
     var comic: RandomComicModel = .mock
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4){
-            ImageLoader(imageURL: imageName)
-                .frame(width: 120, height: 180)
-                .aspectRatio(contentMode: .fill)
-                .cornerRadius(4)
-            
-            Text(comic.title ?? "")
-                .font(.system(size: 10))
-                .fontWeight(.medium)
-                .foregroundStyle(.marvelBlack)
-            
-            Text(comic.series?.name ?? "")
-                .font(.system(size: 9))
-                .foregroundStyle(.secondary)
+            ZStack {
+                ImageLoader(imageURL: imageName)
+                    .frame(width: 360, height: 280)
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(8)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(comic.title?.uppercased() ?? "")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.marvelWhite)
+                    
+                    Text(comic.series?.name?.uppercased() ?? "")
+                        .font(.caption)
+                        .foregroundStyle(.marvelWhite.opacity(0.6))
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(1)
+                }
+                .padding(.bottom, 30)
+                .padding(.horizontal)
+                .frame(maxWidth: 360, alignment: .leading)
+                .frame(maxHeight: 280, alignment: .bottom)
+                .background(
+                    LinearGradient(
+                        colors: [Color.marvelBlack.opacity(0.01), Color.marvelBlack.opacity(0.5)],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                    .cornerRadius(8)
+                )
+                .overlay (
+                    Rectangle()
+                        .fill(Color.marvelRed.opacity(0.8))
+                        .frame(width: 80, height: 80, alignment: .bottom)
+                        .clipShape(
+                            UnevenRoundedRectangle(
+                                bottomTrailingRadius: 8
+                            )
+                        )
+                        .overlay {
+                            Text("MORE DETAILS")
+                                .fontWeight(.bold)
+                                .foregroundStyle(.marvelWhite)
+                        }
+                        .onTapGesture {
+                            
+                        }
+                    ,alignment: .bottomTrailing
+                )
+            }
         }
-        .multilineTextAlignment(.leading)
-        .lineLimit(4)
-        .frame(maxWidth: 120)
     }
 }
 
 #Preview {
     ZStack {
         Color.marvelWhite.ignoresSafeArea()
-        RandomComicCell()
+        RandomComicForTheDayCell()
     }
 }

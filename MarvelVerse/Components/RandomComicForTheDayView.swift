@@ -19,13 +19,14 @@ struct RandomComicForTheDayView: View {
                 VStack() {
                     HStack {
                         VStack(spacing: 12) {
-                            Text("Random Comic")
+                            Text("Random Comic For The Day")
                                 .font(.title2)
-                                .fontWeight(.medium)
+                                .fontWeight(.semibold)
                                 .foregroundStyle(.marvelRed)
                             
                             ForEach(viewModel.randomComic) { randomComic in
                                 RandomComicForTheDayCell(imageName: viewModel.extractImage(data: randomComic.thumbnail ?? ["":""]), comic: randomComic)
+                                    
                             }
                         }
                     }
