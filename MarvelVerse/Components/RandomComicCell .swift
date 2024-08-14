@@ -63,6 +63,7 @@ struct RandomComicForTheDayCell: View {
                     ,alignment: .bottomTrailing
                 )
             }
+            .shadow(color: .secondary, radius: 5, x: -1, y: 10)
         }
     }
 }

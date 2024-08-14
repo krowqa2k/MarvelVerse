@@ -22,11 +22,10 @@ struct RandomComicForTheDayView: View {
                             Text("Random Comic For The Day")
                                 .font(.title2)
                                 .fontWeight(.semibold)
-                                .foregroundStyle(.marvelRed)
+                                .foregroundStyle(.marvelBlack)
                             
                             ForEach(viewModel.randomComic) { randomComic in
                                 RandomComicForTheDayCell(imageName: viewModel.extractImage(data: randomComic.thumbnail ?? ["":""]), comic: randomComic)
-                                    
                             }
                         }
                     }
