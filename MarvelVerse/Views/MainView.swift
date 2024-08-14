@@ -19,9 +19,11 @@ struct MainView: View {
                 
                 mainViewImage
                 
-                ScrollView(.vertical) {
-                    ForEach(1..<22) { i in
-                        Text("Placeholder: \(i)")
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ForEach(1..<22) { i in
+                            Text("Placeholder: \(i)")
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -36,9 +38,10 @@ struct MainView: View {
     private var mainViewImage: some View {
         VStack {
             RandomComicForTheDayView()
-                .padding(.top)
+                .padding(.top, -40)
         }
         .frame(maxWidth: .infinity)
+        .frame(height: 380)
         .background(Color.marvelWhite)
         .clipShape(
             UnevenRoundedRectangle(
