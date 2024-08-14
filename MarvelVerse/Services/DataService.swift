@@ -26,24 +26,36 @@ enum ErrorCases: LocalizedError {
 
 final class WebService {
 
+    static let lastFetchKey = "lastFetchDate"
+    
+    // Generowanie losowego ID komiksu
     static func generateRandomComicID() -> String {
         return String(Int.random(in: 2..<27600))
     }
 
+    // Sprawdzanie, czy minęło 24 godziny od ostatniego wywołania API
+    static func shouldFetchNewComic() -> Bool {
+        guard let lastFetch = UserDefaults.standard.object(forKey: lastFetchKey) as? Date else {
+            return true // Nigdy nie pobrano, można pobrać nowy
+        }
+        let timeInterval = Date().timeIntervalSince(lastFetch)
+        return timeInterval >= 24 * 60 * 60 // 24 godziny w sekundach
+    }
+
+    // Główna funkcja pobierania losowego komiksu
     static func getRandomComicData() async throws -> RandomComicResponse {
         
-        let privateKey: String = "5bc503c5a00b453ccff4cfc6912913f325409874"
-        let publicKey: String = "2b23e25a76e180235beae440efbd1949"
-        
-        let ts = String(Date().timeIntervalSince1970)
-        let hash = (ts + privateKey + publicKey).MD5
-        
+        // Sprawdzenie, czy można wykonać nowe wywołanie
+        guard shouldFetchNewComic() else {
+            throw ErrorCases.retryLimitExceeded // Możesz zmienić to na inny przypadek błędu lub zwrócić poprzednie dane
+        }
+
         var retryCount = 0
-        let maxRetries = 5
+        let maxRetries = 1000
 
         while retryCount < maxRetries {
             let randomComicID = generateRandomComicID()
-            let urlString = "https://gateway.marvel.com/v1/public/comics/\(randomComicID)?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+            let urlString = "https://gateway.marvel.com/v1/public/comics/\(randomComicID)?ts=\(Constants.ts)&apikey=\(Constants.publicKey)&hash=\(Constants.hash)"
             
             guard let url = URL(string: urlString) else {
                 throw ErrorCases.invalidURL
@@ -56,6 +68,10 @@ final class WebService {
                     switch httpResponse.statusCode {
                     case 200:
                         let decoder = try JSONDecoder().decode(RandomComicResponse.self, from: data)
+                        
+                        // Zapisanie daty udanego pobrania
+                        UserDefaults.standard.set(Date(), forKey: lastFetchKey)
+                        
                         return decoder
                     case 404:
                         retryCount += 1

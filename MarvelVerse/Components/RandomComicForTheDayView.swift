@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RandomComicView: View {
+struct RandomComicForTheDayView: View {
     
     @StateObject var viewModel: MarvelVerseViewModel = MarvelVerseViewModel()
     
@@ -25,7 +25,7 @@ struct RandomComicView: View {
                                 .foregroundStyle(.marvelRed)
                             
                             ForEach(viewModel.randomComic) { randomComic in
-                                RandomComicCell(imageName: viewModel.extractImage(data: randomComic.thumbnail ?? ["":""]), comic: randomComic)
+                                RandomComicForTheDayCell(imageName: viewModel.extractImage(data: randomComic.thumbnail ?? ["":""]), comic: randomComic)
                             }
                         }
                     }
@@ -39,5 +39,5 @@ struct RandomComicView: View {
 }
 
 #Preview {
-    RandomComicView()
+    RandomComicForTheDayView()
 }

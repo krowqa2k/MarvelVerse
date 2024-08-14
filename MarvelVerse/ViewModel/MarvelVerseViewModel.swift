@@ -13,30 +13,50 @@ final class MarvelVerseViewModel: ObservableObject {
     @Published private(set) var randomComic: [RandomComicModel] = []
     @Published var isLoading: Bool = true
     
+    // Klucz do UserDefaults
+    private let lastComicKey = "lastComicData"
+    
     func getRandomComicData() async {
         isLoading = true
+        
+        // Sprawdzanie, czy można pobrać nowy komiks
         do {
             let randomComic = try await WebService.getRandomComicData()
             
             if let results = randomComic.data?.results {
                 self.randomComic = results
+                
+                // Zapisanie komiksu w UserDefaults
+                if let encodedComic = try? JSONEncoder().encode(results) {
+                    UserDefaults.standard.set(encodedComic, forKey: lastComicKey)
+                }
+                
                 self.isLoading = false
             } else {
                 print("No comic results found.")
+                loadLastComicFromStorage()
             }
         } catch {
             print("Error fetching comic data: \(error)")
-            self.isLoading = false
+            loadLastComicFromStorage()
         }
     }
     
+    // Funkcja ładowania ostatniego komiksu z UserDefaults
+    private func loadLastComicFromStorage() {
+        if let savedComicData = UserDefaults.standard.data(forKey: lastComicKey),
+           let savedComic = try? JSONDecoder().decode([RandomComicModel].self, from: savedComicData) {
+            self.randomComic = savedComic
+        } else {
+            print("No saved comic found.")
+        }
+        self.isLoading = false
+    }
+    
     func extractImage(data: [String: String]) -> String {
-        
         let path = data["path"] ?? ""
         let ext = data["extension"] ?? ""
-        
-        let thumbnail = "\(path).\(ext)"
-        return thumbnail
-        
+        return "\(path).\(ext)"
     }
 }
+
