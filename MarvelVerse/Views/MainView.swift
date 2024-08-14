@@ -19,16 +19,7 @@ struct MainView: View {
                 
                 mainViewImage
                 
-                ScrollView(.horizontal) {
-                    LazyHStack {
-                        ForEach(1..<22) { i in
-                            Text("Placeholder: \(i)")
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-                .scrollIndicators(.hidden)
+                MostPopularCharactesView()
                 
                 Spacer()
             }
@@ -41,7 +32,7 @@ struct MainView: View {
                 .padding(.top, -40)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 380)
+        .frame(height: 370)
         .background(Color.marvelWhite)
         .clipShape(
             UnevenRoundedRectangle(
