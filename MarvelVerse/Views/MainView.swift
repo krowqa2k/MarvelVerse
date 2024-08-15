@@ -14,12 +14,10 @@ struct MainView: View {
     var body: some View {
         ZStack {
             Color.marvelWhite.ignoresSafeArea()
-            VStack {
+            VStack(spacing: 0) {
                 HeaderView()
                 
                 mainViewImage
-                
-                MostPopularCharactesView()
                 
                 Spacer()
             }

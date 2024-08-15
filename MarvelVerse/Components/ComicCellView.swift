@@ -13,19 +13,21 @@ struct ComicCellView: View {
     var comic: Comic = .mock
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            ImageLoader(imageURL: imageName ?? Constants.noImage)
-                .frame(width: 120, height: 180)
-                .cornerRadius(4)
-            
-            Text(comic.title ?? "")
-                .font(.system(size: 11))
-                .fontWeight(.semibold)
-                .foregroundStyle(.marvelBlack)
-                .multilineTextAlignment(.leading)
-                .lineLimit(nil)
+        ZStack(alignment: .top){
+            VStack(alignment: .leading, spacing: 8) {
+                ImageLoader(imageURL: imageName ?? Constants.noImage)
+                    .frame(width: 120, height: 180)
+                    .cornerRadius(4)
+                
+                Text(comic.title ?? "")
+                    .font(.system(size: 11))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.marvelBlack)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+            }
+            .frame(maxWidth: 120)
         }
-        .frame(maxWidth: 120)
     }
 }
 

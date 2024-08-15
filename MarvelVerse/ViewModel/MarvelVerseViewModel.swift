@@ -12,6 +12,7 @@ final class MarvelVerseViewModel: ObservableObject {
     
     @Published private(set) var randomComic: [RandomComicModel] = []
     @Published private(set) var spiderManComics: [Comic] = []
+    @Published private(set) var wolverineComics: [Comic] = []
     @Published var isLoading: Bool = true
     
     // Klucz do UserDefaults
@@ -40,25 +41,6 @@ final class MarvelVerseViewModel: ObservableObject {
         } catch {
             print("Error fetching comic data: \(error)")
             loadLastComicFromStorage()
-        }
-    }
-    
-    func getSpiderManComicData() async {
-        isLoading = true
-        
-        do {
-            let spiderManComic = try await WebService.getSpiderManComics()
-            
-            if let results = spiderManComic.data?.results {
-                self.spiderManComics = results
-                self.isLoading = false
-            } else {
-                print("No comic results found.")
-                self.isLoading = false
-            }
-        } catch {
-            print("Error fetching comic data: \(error)")
-            self.isLoading = false
         }
     }
     

@@ -89,37 +89,4 @@ final class WebService {
         throw ErrorCases.retryLimitExceeded
     }
     
-    static func getSpiderManComics() async throws -> ComicResponse {
-        
-        let title: String = "Spider-Man"
-        
-        let urlString = "https://gateway.marvel.com:443/v1/public/comics?format=comic&title=\(title)&limit=10&ts=\(Constants.ts)&apikey=\(Constants.publicKey)&hash=\(Constants.hash)"
-        
-        guard let url = URL(string: urlString) else {
-            throw ErrorCases.invalidURL
-        }
-        
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                switch httpResponse.statusCode {
-                case 200:
-                    let decoder = try JSONDecoder().decode(ComicResponse.self, from: data)
-                    return decoder
-                    
-                case 404:
-                    throw ErrorCases.InvalidResponse
-                default:
-                    throw ErrorCases.InvalidResponse
-                }
-            } else {
-                throw ErrorCases.InvalidResponse
-            }
-        } catch {
-            print("Error fetching comic data: \(error.localizedDescription)")
-            throw error
-        }
-    }
-    
 }
