@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct RandomCharacterForTheDayView: View {
+    @StateObject var viewModel: MarvelVerseViewModel = MarvelVerseViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack() {
+                HStack {
+                    VStack(spacing: 12) {
+                        Text("Character For The Day")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.marvelRed)
+                        
+                        ForEach(viewModel.randomCharacter) { randomCharacter in
+                            if viewModel.isLoadingCharacter {
+                                ProgressView()
+                            } else {
+                                RandomCharacterCell(imageName: viewModel.extractImage(data: randomCharacter.thumbnail ?? ["":""]), character: randomCharacter)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .task {
+            await viewModel.getRandomCharacterData()
+        }
     }
 }
 
