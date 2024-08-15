@@ -19,7 +19,10 @@ struct MainView: View {
                 
                 mainViewImage
                 
-                Spacer()
+                RandomCharacterForTheDayView()
+                    .offset(y: -40)
+                
+               Spacer()
             }
         }
     }
@@ -27,7 +30,7 @@ struct MainView: View {
     private var mainViewImage: some View {
         VStack {
             RandomComicForTheDayView()
-                .padding(.top, -40)
+                .padding(.top, -20)
         }
         .frame(maxWidth: .infinity)
         .frame(height: 370)

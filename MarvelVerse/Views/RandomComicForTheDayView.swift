@@ -13,18 +13,18 @@ struct RandomComicForTheDayView: View {
     
     var body: some View {
         ZStack {
-            if viewModel.isLoading {
-                ProgressView()
-            } else {
-                VStack() {
-                    HStack {
-                        VStack(spacing: 12) {
-                            Text("Random Comic For The Day")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.marvelBlack)
-                            
-                            ForEach(viewModel.randomComic) { randomComic in
+            VStack() {
+                HStack {
+                    VStack(spacing: 12) {
+                        Text("Comic For The Day")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.marvelRed)
+                        
+                        ForEach(viewModel.randomComic) { randomComic in
+                            if viewModel.isLoading {
+                                ProgressView()
+                            } else {
                                 RandomComicForTheDayCell(imageName: viewModel.extractImage(data: randomComic.thumbnail ?? ["":""]), comic: randomComic)
                             }
                         }
