@@ -16,7 +16,7 @@ struct RandomComicForTheDayView: View {
             VStack() {
                 HStack {
                     VStack(spacing: 12) {
-                        Text("Comic For The Day")
+                        Text("Comic Of The Day")
                             .font(.title2)
                             .fontWeight(.semibold)
                             .foregroundStyle(.marvelRed)
