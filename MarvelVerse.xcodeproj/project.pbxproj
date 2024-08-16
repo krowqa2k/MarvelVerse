@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C15CB1122C6CEEF9004115C9 /* ComicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CB1112C6CEEF9004115C9 /* ComicModel.swift */; };
 		C15CB1142C6CF53C004115C9 /* ComicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CB1132C6CF53C004115C9 /* ComicCellView.swift */; };
+		C197C32F2C6F9E5C00E3FAB0 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C197C32E2C6F9E5C00E3FAB0 /* TabView.swift */; };
+		C197C3312C6FA6F800E3FAB0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C197C3302C6FA6F800E3FAB0 /* SearchView.swift */; };
+		C197C3332C6FA70000E3FAB0 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C197C3322C6FA70000E3FAB0 /* InfoView.swift */; };
 		C199C2ED2C66A06F004FFE2F /* MarvelVerseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199C2EC2C66A06F004FFE2F /* MarvelVerseApp.swift */; };
 		C199C2EF2C66A06F004FFE2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199C2EE2C66A06F004FFE2F /* ContentView.swift */; };
 		C199C2F12C66A070004FFE2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C199C2F02C66A070004FFE2F /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 /* Begin PBXFileReference section */
 		C15CB1112C6CEEF9004115C9 /* ComicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicModel.swift; sourceTree = "<group>"; };
 		C15CB1132C6CF53C004115C9 /* ComicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCellView.swift; sourceTree = "<group>"; };
+		C197C32E2C6F9E5C00E3FAB0 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		C197C3302C6FA6F800E3FAB0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		C197C3322C6FA70000E3FAB0 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		C199C2E92C66A06F004FFE2F /* MarvelVerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelVerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C199C2EC2C66A06F004FFE2F /* MarvelVerseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelVerseApp.swift; sourceTree = "<group>"; };
 		C199C2EE2C66A06F004FFE2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 				C199C3022C66A896004FFE2F /* MainView.swift */,
 				C1D97C922C6B807000629839 /* RandomComicForTheDayView.swift */,
 				C1ABB6452C6E5874002E396B /* RandomCharacterForTheDayView.swift */,
+				C197C32E2C6F9E5C00E3FAB0 /* TabView.swift */,
+				C197C3302C6FA6F800E3FAB0 /* SearchView.swift */,
+				C197C3322C6FA70000E3FAB0 /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,12 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C199C2EF2C66A06F004FFE2F /* ContentView.swift in Sources */,
+				C197C3312C6FA6F800E3FAB0 /* SearchView.swift in Sources */,
 				C199C3032C66A896004FFE2F /* MainView.swift in Sources */,
 				C1D97C7E2C6B767400629839 /* ImageLoader.swift in Sources */,
 				C199C2ED2C66A06F004FFE2F /* MarvelVerseApp.swift in Sources */,
 				C1ABB6482C6E5AF4002E396B /* RandomCharacterModel.swift in Sources */,
 				C199C3052C66AADA004FFE2F /* HeaderView.swift in Sources */,
 				C1D97C982C6B9D5400629839 /* RandomComicCell .swift in Sources */,
+				C197C3332C6FA70000E3FAB0 /* InfoView.swift in Sources */,
 				C1D97C8B2C6B77F800629839 /* RandomComicModel.swift in Sources */,
 				C1D97C912C6B7F9300629839 /* MarvelVerseViewModel.swift in Sources */,
 				C15CB1142C6CF53C004115C9 /* ComicCellView.swift in Sources */,
@@ -266,6 +277,7 @@
 				C1D97C932C6B807000629839 /* RandomComicForTheDayView.swift in Sources */,
 				C1D97C962C6B8AB700629839 /* MD5.swift in Sources */,
 				C1ABB64A2C6E5CC8002E396B /* RandomCharacterCell.swift in Sources */,
+				C197C32F2C6F9E5C00E3FAB0 /* TabView.swift in Sources */,
 				C1ABB6462C6E5874002E396B /* RandomCharacterForTheDayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

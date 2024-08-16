@@ -9,20 +9,40 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var screenIndex: Int = 0
     private let marvelMainImage: String = "marvel_main"
 
     var body: some View {
         ZStack {
             Color.marvelWhite.ignoresSafeArea()
             VStack(spacing: 0) {
-                HeaderView()
+                switch screenIndex{
+                case 0:
+                    HeaderView()
+                    
+                    mainViewImage
+                    
+                    RandomCharacterForTheDayView()
+                        .offset(y: -40)
+                        .padding(.bottom, 0)
+                case 1:
+                    SearchView()
+                case 2:
+                    InfoView()
+                default:
+                    HeaderView()
+                    
+                    mainViewImage
+                    
+                    RandomCharacterForTheDayView()
+                        .offset(y: -40)
+                    
+                }
                 
-                mainViewImage
+            Spacer(minLength: 0)
                 
-                RandomCharacterForTheDayView()
-                    .offset(y: -40)
-                
-               Spacer()
+            TabView(screenIndex: $screenIndex)
+                    .offset(y: -20)
             }
         }
     }
@@ -30,7 +50,7 @@ struct MainView: View {
     private var mainViewImage: some View {
         VStack {
             RandomComicForTheDayView()
-                .padding(.top, -20)
+                .offset(y: -20)
         }
         .frame(maxWidth: .infinity)
         .frame(height: 370)
@@ -41,7 +61,7 @@ struct MainView: View {
                 topTrailingRadius: 6
             )
         )
-        .offset(y: -15)
+        .offset(y: -12)
     }
 }
 

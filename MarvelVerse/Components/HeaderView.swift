@@ -20,7 +20,7 @@ struct HeaderView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal)
-        .padding(.bottom, 20)
+        .padding(.bottom, 10)
         .frame(height: 70)
         .background(
             LinearGradient(
