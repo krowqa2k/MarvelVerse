@@ -11,10 +11,6 @@ struct InfoView: View {
     var body: some View {
         ZStack {
             Color.marvelWhite.ignoresSafeArea()
-            VStack {
-                HeaderView()
-                Spacer()
-            }
         }
     }
 }
