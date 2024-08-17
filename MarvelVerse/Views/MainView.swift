@@ -16,10 +16,9 @@ struct MainView: View {
         ZStack {
             Color.marvelWhite.ignoresSafeArea()
             VStack(spacing: 0) {
+                HeaderView()
                 switch screenIndex{
                 case 0:
-                    HeaderView()
-                    
                     mainViewImage
                     
                     RandomCharacterForTheDayView()
@@ -30,8 +29,6 @@ struct MainView: View {
                 case 2:
                     InfoView()
                 default:
-                    HeaderView()
-                    
                     mainViewImage
                     
                     RandomCharacterForTheDayView()
@@ -40,7 +37,6 @@ struct MainView: View {
                 
             Spacer(minLength: 0)
                 
-            
             }
             TabView(screenIndex: $screenIndex)
                 .offset(y: UIScreen.main.bounds.width - 20)
