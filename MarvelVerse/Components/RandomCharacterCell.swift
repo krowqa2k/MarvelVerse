@@ -15,7 +15,7 @@ struct RandomCharacterCell: View {
         VStack(alignment: .leading, spacing: 4){
             ZStack {
                 ImageLoader(imageURL: imageName)
-                    .frame(width: 240, height: 280)
+                    .frame(width: 260, height: 280)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(8)
                     .shadow(color: .secondary, radius: 5, x: 0, y: 10)
@@ -28,7 +28,7 @@ struct RandomCharacterCell: View {
                 }
                 .padding(.bottom, 10)
                 .padding(.horizontal)
-                .frame(maxWidth: 240, alignment: .leading)
+                .frame(maxWidth: 260, alignment: .leading)
                 .frame(maxHeight: 280, alignment: .bottom)
                 .background(
                     LinearGradient(
