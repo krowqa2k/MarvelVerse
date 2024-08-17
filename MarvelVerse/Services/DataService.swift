@@ -146,4 +146,38 @@ final class WebService {
         
         throw ErrorCases.retryLimitExceeded
     }
+    
+    static func getSearchDBData(query: String) async throws -> ComicResponse {
+        guard !query.isEmpty else {
+            throw ErrorCases.invalidURL
+        }
+        let queryEncoded = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://gateway.marvel.com/v1/public/comics?title=\(queryEncoded)&limit=20&ts=\(Constants.ts)&apikey=\(Constants.publicKey)&hash=\(Constants.hash)"
+        
+        guard let url = URL(string: urlString) else {
+            throw ErrorCases.invalidURL
+        }
+        
+        do {
+            print("Started fetching")
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                switch httpResponse.statusCode {
+                case 200:
+                    let decoder = try JSONDecoder().decode(ComicResponse.self, from: data)
+                    print("Fetched data")
+                    return decoder
+                case 404:
+                    throw ErrorCases.InvalidResponse
+                default:
+                    throw ErrorCases.InvalidResponse
+                }
+            }
+        } catch {
+            print("Error fetching comic data: \(error.localizedDescription)")
+        }
+        
+        throw ErrorCases.retryLimitExceeded
+    }
 }

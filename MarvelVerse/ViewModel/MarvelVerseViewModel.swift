@@ -12,8 +12,10 @@ final class MarvelVerseViewModel: ObservableObject {
     
     @Published private(set) var randomComic: [RandomComicModel] = []
     @Published private(set) var randomCharacter: [RandomCharacterModel] = []
-    @Published var isLoading: Bool = true
-    @Published var isLoadingCharacter: Bool = true
+    @Published private(set) var comicSearch: [Comic] = []
+    @Published var isLoading: Bool = false
+    @Published var isLoadingSearch: Bool = false
+    @Published var isLoadingCharacter: Bool = false
     
     // Klucz do UserDefaults
     private let lastComicKey = "lastComicData"
@@ -70,6 +72,27 @@ final class MarvelVerseViewModel: ObservableObject {
         }
     }
     
+    func getSearchDBData(query: String) {
+        Task {
+            isLoadingSearch = true
+            do {
+                print("Query: \(query)")
+                print("Started fetching")
+                let searchData = try await WebService.getSearchDBData(query: query)
+                
+                if let results = searchData.data?.results {
+                    self.comicSearch = results
+                    print("Results: \(results)")
+                } else {
+                    print("No results found")
+                }
+            } catch {
+                print("Error fetching comic data: \(error)")
+            }
+            isLoadingSearch = false
+            print("Finished fetching")
+        }
+    }
     
     
     // Funkcja ładowania ostatniego komiksu z UserDefaults
