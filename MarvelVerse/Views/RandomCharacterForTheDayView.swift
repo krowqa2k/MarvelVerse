@@ -14,7 +14,7 @@ struct RandomCharacterForTheDayView: View {
         ZStack {
             VStack() {
                 HStack {
-                    VStack(spacing: 12) {
+                    VStack(spacing: 4) {
                         Text("Character Of The Day")
                             .font(.title2)
                             .fontWeight(.semibold)

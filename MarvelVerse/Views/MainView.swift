@@ -23,7 +23,7 @@ struct MainView: View {
                     mainViewImage
                     
                     RandomCharacterForTheDayView()
-                        .offset(y: -40)
+                        .offset(y: -50)
                         .padding(.bottom, 0)
                 case 1:
                     SearchView()
@@ -35,15 +35,15 @@ struct MainView: View {
                     mainViewImage
                     
                     RandomCharacterForTheDayView()
-                        .offset(y: -40)
                     
                 }
                 
             Spacer(minLength: 0)
                 
-            TabView(screenIndex: $screenIndex)
-                    .offset(y: -20)
+            
             }
+            TabView(screenIndex: $screenIndex)
+                .offset(y: UIScreen.main.bounds.width - 20)
         }
     }
     
@@ -53,15 +53,15 @@ struct MainView: View {
                 .offset(y: -20)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 370)
+        .frame(height: 360)
         .background(Color.marvelWhite)
         .clipShape(
             UnevenRoundedRectangle(
-                topLeadingRadius: 6,
-                topTrailingRadius: 6
+                topLeadingRadius: 8,
+                topTrailingRadius: 8
             )
         )
-        .offset(y: -12)
+        .offset(y: -10)
     }
 }
 
