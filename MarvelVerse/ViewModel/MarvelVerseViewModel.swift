@@ -16,6 +16,7 @@ final class MarvelVerseViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isLoadingSearch: Bool = false
     @Published var isLoadingCharacter: Bool = false
+    @Published var isEmpty: Bool = false
     
     // Klucz do UserDefaults
     private let lastComicKey = "lastComicData"
@@ -75,6 +76,7 @@ final class MarvelVerseViewModel: ObservableObject {
     func getSearchDBData(query: String) {
         Task {
             isLoadingSearch = true
+            isEmpty = false
             do {
                 print("Query: \(query)")
                 print("Started fetching")
@@ -90,6 +92,9 @@ final class MarvelVerseViewModel: ObservableObject {
                 print("Error fetching comic data: \(error)")
             }
             isLoadingSearch = false
+            if self.comicSearch.isEmpty {
+                isEmpty = true
+            }
             print("Finished fetching")
         }
     }
