@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct MarvelVerseApp: App {
+    
+    @StateObject private var viewModel = MarvelVerseViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack{
                 MainView()
             }
+            .environmentObject(viewModel)
         }
     }
 }

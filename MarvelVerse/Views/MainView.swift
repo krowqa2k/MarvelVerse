@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     
+    @EnvironmentObject var viewModel: MarvelVerseViewModel
     @State private var screenIndex: Int = 0
     private let marvelMainImage: String = "marvel_main"
 
@@ -63,4 +64,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environmentObject(MarvelVerseViewModel())
 }

@@ -87,7 +87,9 @@ struct SearchView: View {
                     .foregroundStyle(.marvelBlack)
             }
             ForEach(viewModel.comicSearch){ comic in
-                ComicCellView(imageName: viewModel.extractImage(data: comic.thumbnail), comic: comic)
+                NavigationLink(destination: DetailsView(imageName: viewModel.extractImage(data: comic.thumbnail), comic: comic)) {
+                    ComicCellView(imageName: viewModel.extractImage(data: comic.thumbnail), comic: comic)
+                }
             }
         }
     }
