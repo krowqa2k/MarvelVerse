@@ -10,7 +10,7 @@ import SwiftUI
 struct RandomComicForTheDayCell: View {
     
     var imageName: String = Constants.mockImage
-    var comic: RandomComicModel = .mock
+    var comic: Comic = .mock
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4){
