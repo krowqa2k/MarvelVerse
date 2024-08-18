@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 final class MarvelVerseViewModel: ObservableObject {
     
-    @Published private(set) var randomComic: [RandomComicModel] = []
+    @Published private(set) var randomComic: [Comic] = []
     @Published private(set) var randomCharacter: [RandomCharacterModel] = []
     @Published private(set) var comicSearch: [Comic] = []
     @Published var isLoading: Bool = false
@@ -103,7 +103,7 @@ final class MarvelVerseViewModel: ObservableObject {
     // Funkcja ładowania ostatniego komiksu z UserDefaults
     private func loadLastComicFromStorage() {
         if let savedComicData = UserDefaults.standard.data(forKey: lastComicKey),
-           let savedComic = try? JSONDecoder().decode([RandomComicModel].self, from: savedComicData) {
+           let savedComic = try? JSONDecoder().decode([Comic].self, from: savedComicData) {
             self.randomComic = savedComic
         } else {
             print("No saved comic found.")

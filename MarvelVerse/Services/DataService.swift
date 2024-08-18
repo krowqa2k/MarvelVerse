@@ -56,7 +56,7 @@ final class WebService {
     }
 
     // Główna funkcja pobierania losowego komiksu
-    static func getRandomComicData() async throws -> RandomComicResponse {
+    static func getRandomComicData() async throws -> ComicResponse {
         
         // Sprawdzenie, czy można wykonać nowe wywołanie
         guard shouldFetchNewComic() else {
@@ -80,7 +80,7 @@ final class WebService {
                 if let httpResponse = response as? HTTPURLResponse {
                     switch httpResponse.statusCode {
                     case 200:
-                        let decoder = try JSONDecoder().decode(RandomComicResponse.self, from: data)
+                        let decoder = try JSONDecoder().decode(ComicResponse.self, from: data)
                         
                         // Zapisanie daty udanego pobrania
                         UserDefaults.standard.set(Date(), forKey: lastFetchKeyComic)
