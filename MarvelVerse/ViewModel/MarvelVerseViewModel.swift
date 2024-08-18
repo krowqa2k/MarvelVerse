@@ -126,5 +126,14 @@ final class MarvelVerseViewModel: ObservableObject {
         let ext = data["extension"] ?? ""
         return "\(path).\(ext)"
     }
+    
+    func extractURL(data: [[String: String]]) -> String? {
+        for dict in data {
+            if dict["type"] == "detail" {
+                return dict["url"]
+            }
+        }
+        return nil
+    }
 }
 
