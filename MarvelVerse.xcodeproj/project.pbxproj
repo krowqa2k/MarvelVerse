@@ -30,6 +30,7 @@
 		C1D97C932C6B807000629839 /* RandomComicForTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C922C6B807000629839 /* RandomComicForTheDayView.swift */; };
 		C1D97C962C6B8AB700629839 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C952C6B8AB700629839 /* MD5.swift */; };
 		C1D97C982C6B9D5400629839 /* RandomComicCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D97C972C6B9D5400629839 /* RandomComicCell .swift */; };
+		C1E992842C721683007FB34C /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E992832C721683007FB34C /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C1D97C952C6B8AB700629839 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		C1D97C972C6B9D5400629839 /* RandomComicCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomComicCell .swift"; sourceTree = "<group>"; };
 		C1D97C992C6BA84A00629839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C1E992832C721683007FB34C /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				C197C32E2C6F9E5C00E3FAB0 /* TabView.swift */,
 				C197C3302C6FA6F800E3FAB0 /* SearchView.swift */,
 				C197C3322C6FA70000E3FAB0 /* InfoView.swift */,
+				C1E992832C721683007FB34C /* DetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				C1ABB6482C6E5AF4002E396B /* RandomCharacterModel.swift in Sources */,
 				C199C3052C66AADA004FFE2F /* HeaderView.swift in Sources */,
 				C1D97C982C6B9D5400629839 /* RandomComicCell .swift in Sources */,
+				C1E992842C721683007FB34C /* DetailsView.swift in Sources */,
 				C197C3332C6FA70000E3FAB0 /* InfoView.swift in Sources */,
 				C1D97C8B2C6B77F800629839 /* RandomComicModel.swift in Sources */,
 				C1D97C912C6B7F9300629839 /* MarvelVerseViewModel.swift in Sources */,
