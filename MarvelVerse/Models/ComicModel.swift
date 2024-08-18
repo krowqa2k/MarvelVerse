@@ -41,6 +41,11 @@ struct Comic: Codable, Identifiable {
                     resourceURI: "http://gateway.marvel.com/v1/public/creators/13081",
                     name: "Saladin Ahmed",
                     role: "writer"
+                ),
+                CreatorsItem(
+                    resourceURI: "http://gateway.marvel.com/v1/public/creators/12313",
+                    name: "Mark Basso",
+                    role: "editor"
                 )]
             ),
             thumbnail: ["path": "http://i.annihil.us/u/prod/marvel/i/mg/1/30/56538fd257915"]
