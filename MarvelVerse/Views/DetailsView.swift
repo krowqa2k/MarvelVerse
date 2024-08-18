@@ -12,6 +12,7 @@ struct DetailsView: View {
     @StateObject private var viewModel = MarvelVerseViewModel()
     var imageName: String = Constants.mockImage
     var comic: Comic = .mock
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -90,6 +91,21 @@ struct DetailsView: View {
             }
             .padding(.top, 80)
         }
+        .overlay(alignment: .topLeading, content: {
+            ZStack{
+                Circle()
+                    .frame(width: 50, height: 50)
+                    .foregroundStyle(.marvelRed)
+                Image(systemName: "xmark")
+                    .font(.title2)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.marvelWhite)
+            }
+            .padding(.horizontal)
+            .onTapGesture {
+                dismiss()
+            }
+        })
         .toolbar(.hidden, for: .navigationBar)
     }
 }
