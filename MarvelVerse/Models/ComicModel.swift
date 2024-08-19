@@ -54,6 +54,10 @@ struct Comic: Codable, Identifiable {
     }
 }
 
+struct Series: Codable {
+    let resourceURI: String?
+    let name: String?
+}
 
 struct Creators: Codable {
     let available: Int?
