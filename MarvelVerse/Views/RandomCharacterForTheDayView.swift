@@ -20,10 +20,12 @@ struct RandomCharacterForTheDayView: View {
                             .fontWeight(.semibold)
                             .foregroundStyle(.marvelRed)
                         
-                        ForEach(viewModel.randomCharacter) { randomCharacter in
-                            if viewModel.isLoadingCharacter {
-                                ProgressView()
-                            } else {
+                        if viewModel.isLoadingCharacter {
+                            ProgressView()
+                                .tint(.marvelRed)
+                                .background(Color.marvelWhite)
+                        } else {
+                            ForEach(viewModel.randomCharacter) { randomCharacter in
                                 RandomCharacterCell(imageName: viewModel.extractImage(data: randomCharacter.thumbnail ?? ["":""]), character: randomCharacter)
                             }
                         }

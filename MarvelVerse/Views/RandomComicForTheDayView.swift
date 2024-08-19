@@ -23,6 +23,8 @@ struct RandomComicForTheDayView: View {
                         
                         if viewModel.isLoading {
                             ProgressView()
+                                .tint(.marvelRed)
+                                .background(Color.marvelWhite)
                         } else {
                             ForEach(viewModel.randomComic) { randomComic in
                                 NavigationLink(destination: DetailsView(imageName: viewModel.extractImage(data: randomComic.thumbnail), comic: randomComic)) {
