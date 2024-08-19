@@ -15,10 +15,10 @@ Technologies Used 🛠️:
 *Unfortunatelty something happened with Marvel API and it's really slow now with response so I had to change limit for comics to 15 in search view for user Experience.* :((
 
 App Demonstration: 
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 02 16](https://github.com/user-attachments/assets/e3887af0-8c4b-48e8-ba3e-1296cf393eb0)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 03 18](https://github.com/user-attachments/assets/85846c23-c229-44da-9ff2-e6e26b7285be)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 04 08](https://github.com/user-attachments/assets/a8a3ecf7-9dbf-4be5-ba1f-e0305b14e447)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 04 16](https://github.com/user-attachments/assets/8072b7b5-c317-40ce-a4e2-80e8ee0167dd)
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 02 16](https://github.com/user-attachments/assets/e3887af0-8c4b-48e8-ba3e-1296cf393eb0 =375x812)
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 03 18](https://github.com/user-attachments/assets/85846c23-c229-44da-9ff2-e6e26b7285be =375x812)
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 04 08](https://github.com/user-attachments/assets/a8a3ecf7-9dbf-4be5-ba1f-e0305b14e447 =375x812)
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 15 04 16](https://github.com/user-attachments/assets/8072b7b5-c317-40ce-a4e2-80e8ee0167dd =375x812)
 
 
 
