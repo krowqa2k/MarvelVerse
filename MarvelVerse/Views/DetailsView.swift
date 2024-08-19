@@ -80,13 +80,14 @@ struct DetailsView: View {
                     Text("SYNOPSIS")
                         .font(.headline)
                         .foregroundStyle(.marvelRed)
-                    
-                    Text(comic.description ?? "")
-                        .foregroundStyle(.marvelBlack.opacity(0.9))
-                        .font(.callout)
-                        .multilineTextAlignment(.leading)
-                        .padding(.horizontal)
-                        .frame(width: UIScreen.main.bounds.width - 20)
+                    ScrollView(.vertical){
+                        Text(comic.description ?? "")
+                            .foregroundStyle(.marvelBlack.opacity(0.9))
+                            .font(.callout)
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal)
+                            .frame(width: UIScreen.main.bounds.width - 20)
+                    }
                 }
                 Spacer()
             }
