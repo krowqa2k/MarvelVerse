@@ -73,6 +73,7 @@ struct DetailsView: View {
                         }
                         
                     }
+                    .frame(maxHeight: 80, alignment: .top)
                 }
                 
                 VStack(alignment: .leading, spacing: 4){
