@@ -152,7 +152,7 @@ final class WebService {
             throw ErrorCases.invalidURL
         }
         let queryEncoded = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let urlString = "https://gateway.marvel.com/v1/public/comics?title=\(queryEncoded)&limit=15&ts=\(Constants.ts)&apikey=\(Constants.publicKey)&hash=\(Constants.hash)"
+        let urlString = "https://gateway.marvel.com/v1/public/comics?title=\(queryEncoded)&ts=\(Constants.ts)&apikey=\(Constants.publicKey)&hash=\(Constants.hash)"
         
         guard let url = URL(string: urlString) else {
             throw ErrorCases.invalidURL
