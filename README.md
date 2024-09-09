@@ -12,8 +12,6 @@ Technologies Used 🛠️:
 - SDWebImageSwiftUI package
 - User Defaults
   
-*Unfortunatelty something happened with Marvel API and it's really slow now with response so I had to change limit for comics to 15 in search view for user Experience.* :((
-
 App Demonstration: 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e3887af0-8c4b-48e8-ba3e-1296cf393eb0" alt="Screenshot 1" width="200"/>
